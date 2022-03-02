@@ -24,32 +24,33 @@ class Consultation:
     def lieu(self, lieu) -> None:
         self.lieu = lieu
 
-def insert():
-    with open("consultation.csv","r") as f:
-        reader=csv.reader(f)
-        next(reader)
-        consultation={"details":[],"patient":[],"constantes":[],"maladies":[]}
 
-        for row in reader:
+def insert(csvFilePath, jsonFilePath):
+    jsonArr = []
+
+    with open(csvFilePath, encoding='utf-8') as csvf:
+        csvReader = csv.reader(csvf)
+        next(csvReader)
+        for row in csvReader:
             print (row)
-            consultation={"details":[],"patient":[],"constantes":[],"maladies":[]}
-
+            consultation={"ID":"","details":[],"patient":[],"constantes":[],"maladies":[]}
+            consultation["ID"]=row[0]
             consultation["details"].append({
-                "date":row[0],
-                "lieu":row[1],
+                "date":row[1],
+                "lieu":row[2],
                 })
-            
-            patient_informations = row[2].split("|")
+            patient_informations = row[3].split("|")
+            print(row[2])
+
             consultation["patient"].append({
                 "nom":patient_informations[0],
-                "prenom":patient_informations[1],
+                #"prenom":patient_informations[1],
                 "age":patient_informations[2],
                 "sexe":patient_informations[3],
                 "groupe_sanguin":patient_informations[4],
                 "telephone":patient_informations[5],
                 })
-            
-            constante_informations = row[3].split("|")
+            constante_informations = row[4].split("|")
             consultation["constantes"].append({
                 "poids":constante_informations[0],
                 "pression_arterielle":constante_informations[1],
@@ -59,12 +60,20 @@ def insert():
                 })
             
             consultation["maladies"].append({
-                "nom":row[4],
-                "symptomes":row[5],
-                "traitements":row[6],
-                "examen":row[7]
+                "nom":row[5],
+                "symptomes":row[6],
+                "traitements":row[7],
+                "examen":row[8]
                 })
+            jsonArr.append(consultation)
 
-    with open("consultation.json","w") as f:
-        json.dump(consultation, f,indent=4) 
-insert()
+    with open(jsonFilePath, 'w', encoding='utf-8') as jsonf: 
+        jsonString = json.dumps(jsonArr, indent=4)
+        jsonf.write(jsonString)
+
+
+csvFilePath = r'consul.csv'
+jsonFilePath = r'consul.json'
+
+
+insert(csvFilePath, jsonFilePath) 
