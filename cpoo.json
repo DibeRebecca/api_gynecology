@@ -1,0 +1,66 @@
+ {
+    "patient":{
+        "identité":{
+            "id":0,
+            "nom":"",
+            "prenom":"",
+            "date_naissance":"",
+            "adresse":"",
+            "telephone":"",
+            "age":"",
+            "sexe":"",
+            "groupe_sanguin":"",
+            "maladie":["id_maladie"],
+            "consultation":["id_consultation"]
+        }
+    
+    },
+    "consultation":{
+        "id":"",
+        "date":"",
+        "lieu":"",
+        "constantes":{
+            "poids":"",
+            "pression_arterielle":"",
+            "temperature":"",
+            "poul":"",
+            "glycemie":""
+        }
+    
+    },  
+    "maladie":{
+        "id":"",
+        "type":"",
+        "nom":"",
+        "symptomes":[{
+            "id":"",
+            "nom":""
+        }],
+        "traitement":[{
+            "id":"",
+            "dateDebut":"",
+            "nom":"",
+            "resultats":"",
+            "traitementTermine":"boolean"
+        }],
+       
+        "examen":[{
+            "id":"",
+            "date":"",
+            "diagnostic":"",
+            "commentaires":""
+        }]
+       },
+       "medecin":{
+        "identité":{
+            "id":0,
+            "nom":"",
+            "prenom":"",
+            "adresse":"",
+            "telephone":"",
+            "age":"",
+            "sexe":""
+        }
+    
+    }
+}

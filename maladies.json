@@ -1,0 +1,10 @@
+{
+    "maladies": [
+        {
+            "nom": "vaginite",
+            "symptomes": "perte de poids|insomnie",
+            "traitements": "prise de medicaments|chimiotherapie",
+            "examen": "colcoscopie|echograpphie"
+        }
+    ]
+}

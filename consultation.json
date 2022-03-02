@@ -1,0 +1,35 @@
+{
+    "details": [
+        {
+            "date": "12/10/22",
+            "lieu": "lome-cms adidogome"
+        }
+    ],
+    "patient": [
+        {
+            "nom": "rebecca",
+            "prenom": "tabouk",
+            "age": "12",
+            "sexe": "f",
+            "groupe_sanguin": "O+",
+            "telephone": "90857343"
+        }
+    ],
+    "constantes": [
+        {
+            "poids": "56",
+            "pression_arterielle": "12",
+            "temperature": "37",
+            "poul": "12",
+            "glycemie": "1.6"
+        }
+    ],
+    "maladies": [
+        {
+            "nom": " cancer de sein",
+            "symptomes": "pertes blanches|ecoulement",
+            "traitements": "mamographie",
+            "examen": "echographie"
+        }
+    ]
+}
